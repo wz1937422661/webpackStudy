@@ -5,6 +5,7 @@ const content = document.getElementById("content");
 let img = new Image(); 
 img.src = url;
 img.className=style.avatar
+
 content.append(img);
 console.log('我是index.js文件');
 

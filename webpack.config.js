@@ -21,6 +21,7 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
+              
               name: "[name]_[hash].[ext]",
               // 指定图片文件的输出文件名称
               outputPath: "images/",
