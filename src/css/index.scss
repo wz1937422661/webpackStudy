@@ -1,0 +1,16 @@
+body {
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      transform: translate(100px, 100px);
+    }
+    .avatar_green {
+      width: 100px;
+      height: 100px;
+      border: 1px solid green;
+      transform: translate(100px, 100px);
+      margin-left: 10px;
+    }
+}
