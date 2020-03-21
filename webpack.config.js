@@ -1,4 +1,4 @@
-// 这些配置都是webpack提供给我们的配置接口和配置规则  //我在git上做的修改
+// 这些配置都是webpack提供给我们的配置接口和配置规则  
 // 引入node的核心模块
 const path = require("path");
 //webpack使用插件必须引入
