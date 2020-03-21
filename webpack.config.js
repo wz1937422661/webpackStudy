@@ -1,8 +1,10 @@
 // 这些配置都是webpack提供给我们的配置接口和配置规则
 // 引入node的核心模块
 const path = require("path");
-//
-
+//webpack使用插件必须引入
+const HtmlWebpackPlugin=require('html-webpack-plugin');
+// 因为源码导出的是一个对象,不是构造函数所以要获取该构造函数
+const CleanWebpackPlugin=require('clean-webpack-plugin').CleanWebpackPlugin;
 module.exports = {
   //entry我们要打包哪个文件
   // development 用于项目的开发阶段   打包的代码不会被压缩  代码不被压缩可以快速编译
@@ -58,6 +60,10 @@ module.exports = {
      
     ]
   },
+  plugins:[new HtmlWebpackPlugin({
+    template:'src/index.html'
+  },
+  ),new CleanWebpackPlugin()],
   output: {
     filename: "bundle.js",
     //   path后面必须要跟一个绝对路径
