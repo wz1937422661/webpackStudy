@@ -1,17 +1,32 @@
-body {
+@font-face {
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.eot?t=1584757813298"); /* IE9 */
+  src: url("../fonts/iconfont.eot?t=1584757813298#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPsAAsAAAAAB/gAAAOdAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqEAIMwATYCJAMICwYABCAFhG0HNBvaBsgOJUHBwJBgAENBBNmwzd4trRSJ77pUi0MhDEKiEPKVRKNxxLciHPO9Z02tBeekFR1MUiZ9aXqQ+EV+rc9zOb35/MDmBzq3u8YatBbdy6YFmFgB7Y1RolEBBcZZCuI5Iu1A/7cJtJvWn+Agr6QGyCUsCsSNjcaAPOOXDVxodTVX7MxewWwg0VruhNcBcB98Pj5BVMgpmio0HF/nkiDjxUzqRKM7R2vxCGCYLgppHxWbgCTOK+OHRFFpk0i7URKbB7alD17MnZ2ettkfHkE0g72TZSe1azI4xksdU0BCGqgBeBp0Ku19vhZZsFTcMmama45PSz4Uu+FBDzqm/FH92/vYw7yaR9kpV/Ycvp7zsG7LDUvpoo6tV5Ubz/Xbli/I6fynEm+2b9i08eD6DeRC30XrHj1Kv/bowYPUHTssCx4ELV9unn8/7mLdw4f1/ufrpl2qr82rq51/PCFsUz/i5MM4nysPHsDl93sf6HHgke+iVaGrHvos3Nmx61Hxpl4H7yccvx+0eLW5xyLflY/8WmbP69p98vSg51zukcG4dlZRTkR7ZX2rsVeXGfA98iEEYddqgrpfbtl6Jh9k9L9b/a7F3uzUAdVjsB4jur/9UjNZIT8bPmoqkaxf/h3op3Rd6CsnFjrogmna/EjmWyCjbZR7YwynR6WWiztiIs3kggLZXHxlTFXICN3gvGNlGWrRYyqKn2CNm3Aagv8bZOmSLnUGb8z9b+rUWnNHXpxPWWlDxdwC2QLSHBkj7ihPHfVI/bIoQ3/o7ugmw6RvkQzJDCwpHbvnV7AdZECmXgkP/Ivf8de26deuS/ndqkrwvGxFbOBN3ZJA67Mmgv8skLDBbJrgK6mrfHOgaFB+C3t7EvqHdL+XQ5NDABcNrbKBRdFiClWrRTLZTTTpsIVmrbbRbkP+/g4DOCKRbVg3gUHotQtFtwdUvW6Qyb5Ak2Gf0aw3RGh3GaYTOyyHTZnNIYxHJMSHQBvBMhQN8cpQX4VorxPj0qaAr0Ocx5aFkWER+Wo+YhA3xRrPQDqK5ylIcawL5jH3IaeThW6OtSOCD7PyvDspPJyqelIYwbqA0j4OguEhJAg3BGRDYDEorz9PWXh/FYTm5YThGjoayjoIx8M2PBQpTEQHMt/OdOq4lUc8BqJF4fEoEIXDcoHymCjiJCUW5K6eZocQeGGsAwpuScK5XlRXe9jyTtfbdXqJXeApQTZV7bdehmQZ2oWxAAAAAAA=")
+      format("woff2"),
+    url("../fonts/iconfont.woff?t=1584757813298") format("woff"),
+    url("../fonts/iconfont.ttf?t=1584757813298") format("truetype"),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+      url("../fonts/iconfont.svg?t=1584757813298#iconfont") format("svg"); /* iOS 4.1- */
+}
 
-    .avatar {
-      width: 100px;
-      height: 100px;
-      border: 1px solid red;
-      transform: translate(100px, 100px);
-    }
-    
-    .avatar_green {
-      width: 100px;
-      height: 100px;
-      border: 1px solid green;
-      transform: translate(100px, 100px);
-      margin-left: 10px;
-    }
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconyundongmao:before {
+  content: "\e614";
+}
+.red {
+  border: 1px solid red;
+}
+
+.avatar{
+  border: 1px solid greenyellow;
 }

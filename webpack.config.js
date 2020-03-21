@@ -14,14 +14,13 @@ module.exports = {
 
   module: {
     rules: [
-      //打包图片文件
+      //打包图片文件。，，
       {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: "url-loader",
             options: {
-              
               name: "[name]_[hash].[ext]",
               // 指定图片文件的输出文件名称
               outputPath: "images/",
@@ -32,27 +31,36 @@ module.exports = {
       },
       //打包css文件
       {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        use: [
+          {
+            loader: "file-loader",
+          }
+        ]
+      },
+      {
         test: /\.scss$/,
         use: [
-         "style-loader",
-         
-        {
-          // 作用是在scss里进行import引入别的css文件时的时候都会先走postcss-loader和sass-loader
-          loader: "css-loader",
-          options:{
-            importLoaders:2,
-            // 开启css样式的模块化，如果不开启的话css样式是全局的。
-            modules:true
-          }
-        },
-         "sass-loader",
-         "postcss-loader",]
-      }
+          "style-loader",
+          {
+            // 作用是在scss里进行import引入别的css文件时的时候都会先走postcss-loader和sass-loader
+            loader: "css-loader",
+            options: {
+              importLoaders: 2,
+              // 开启css样式的模块化，如果不开启的话css样式是全局的。
+              // modules: true
+            }
+          },
+          "sass-loader",
+          "postcss-loader"
+        ]
+      },
+     
     ]
   },
   output: {
     filename: "bundle.js",
     //   path后面必须要跟一个绝对路径
     path: path.join(__dirname, "dist")
-  },
+  }
 };
