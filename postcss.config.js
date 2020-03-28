@@ -1,3 +1,4 @@
+// 使css兼容各个浏览器
 module.exports = {
     plugins: [
       // 兼容浏览器，添加前缀
