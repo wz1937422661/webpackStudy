@@ -1,10 +1,13 @@
-// 这些配置都是webpack提供给我们的配置接口和配置规则  
+// 这些配置都是webpack提供给我们的配置接口和配置规则
 // 引入node的核心模块
 const path = require("path");
 //webpack使用插件必须引入
-const HtmlWebpackPlugin=require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 // 因为源码导出的是一个对象,不是构造函数所以要获取该构造函数
-const CleanWebpackPlugin=require('clean-webpack-plugin').CleanWebpackPlugin;
+const CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin;
+//引入webpack
+const webpack = require("webpack");
+
 module.exports = {
   //entry我们要打包哪个文件
   // development 用于项目的开发阶段   打包的代码不会被压缩  代码不被压缩可以快速编译
@@ -13,7 +16,13 @@ module.exports = {
   mode: "development",
   entry: "./src/js/index",
   //我们打包的文件放在哪，和打包的文件名
-
+  devServer: {  
+    host: "localhost",
+    port: "8080",
+    open: true, //自动拉起浏览器
+    hot: true //热加载
+    //hotOnly:true
+  },
   module: {
     rules: [
       //打包图片文件。，，
@@ -36,7 +45,7 @@ module.exports = {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: "file-loader"
           }
         ]
       },
@@ -48,7 +57,7 @@ module.exports = {
             // 作用是在scss里进行import引入别的css文件时的时候都会先走postcss-loader和sass-loader
             loader: "css-loader",
             options: {
-              importLoaders: 2,
+              importLoaders: 2
               // 开启css样式的模块化，如果不开启的话css样式是全局的。
               // modules: true
             }
@@ -56,15 +65,18 @@ module.exports = {
           "sass-loader",
           "postcss-loader"
         ]
-      },
-     
+      }
     ]
   },
-  plugins:[new HtmlWebpackPlugin({
-    template:'src/index.html'
-  },
-  ),new CleanWebpackPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "src/index.html"
+    }),
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
   output: {
+    // publicPath:'/dist',//必须加publicPath
     filename: "bundle.js",
     //   path后面必须要跟一个绝对路径
     path: path.join(__dirname, "dist")
